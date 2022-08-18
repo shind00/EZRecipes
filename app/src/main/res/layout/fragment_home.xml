@@ -108,18 +108,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_over_popular" />
 
-    <TextView
-        android:id="@+id/tv_categories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/myfont"
-        android:text="Categories"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_17ssp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/rec_view_meals_popular"
-        app:layout_constraintBottom_toBottomOf="@id/rec_view_meals_popular"/>
+            <TextView
+                android:id="@+id/tv_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:text="Categories"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                android:textStyle="bold"
+                android:paddingTop="@dimen/_5ssp"
+                app:layout_constraintStart_toStartOf="@id/rec_view_meals_popular"
+                app:layout_constraintTop_toBottomOf="@+id/rec_view_meals_popular" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

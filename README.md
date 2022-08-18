@@ -24,8 +24,6 @@ Does not support DarkMode
 
 ![image](https://user-images.githubusercontent.com/43658835/185342245-28cfe4f4-22b9-4506-8090-063a764cc1db.png)
 
-![image](https://user-images.githubusercontent.com/43658835/185342294-bdb840c3-fc4c-4ea2-8d75-34a418495d76.png)
-
 # Libraries + Technologies
 Navigation component - One activity contains multiple fragments
 

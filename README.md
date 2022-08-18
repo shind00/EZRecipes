@@ -12,7 +12,7 @@ Does work on Tablets, but may not be UI elegant.
 Restricting to Portrait mode on Android devices (In development... coming soon)
 
 
-#App Images
+# App Images
 ![image](https://user-images.githubusercontent.com/43658835/185341858-c2a6909c-59df-46b3-8d2c-8e0350dba645.png)
 
 ![image](https://user-images.githubusercontent.com/43658835/185342109-74e33116-a13c-45e0-a393-7c8a2afc8c18.png)

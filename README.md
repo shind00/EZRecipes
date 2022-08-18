@@ -11,6 +11,8 @@ Does work on Tablets, but may not be UI elegant.
 
 Restricting to Portrait mode on Android devices (In development... coming soon)
 
+Does not support DarkMode
+
 
 # App Images
 ![image](https://user-images.githubusercontent.com/43658835/185341858-c2a6909c-59df-46b3-8d2c-8e0350dba645.png)

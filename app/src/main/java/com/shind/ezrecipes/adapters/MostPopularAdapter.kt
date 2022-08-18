@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.shind.ezrecipes.databinding.PopularItemsBinding
-import com.shind.ezrecipes.pojo.CategoryMeals
+import com.shind.ezrecipes.pojo.MealsByCategory
 
 class MostPopularAdapter():RecyclerView.Adapter<MostPopularAdapter.PopularMealViewHolder>(){
 
-    lateinit var onItemClick: ((CategoryMeals) -> Unit)
-    private var mealsList = ArrayList<CategoryMeals>()
+    lateinit var onItemClick: ((MealsByCategory) -> Unit)
+    private var mealsList = ArrayList<MealsByCategory>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularMealViewHolder {
         return PopularMealViewHolder(PopularItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -30,7 +30,7 @@ class MostPopularAdapter():RecyclerView.Adapter<MostPopularAdapter.PopularMealVi
         return mealsList.size
     }
 
-    fun setMeals(mealsList: ArrayList<CategoryMeals>){
+    fun setMeals(mealsList: ArrayList<MealsByCategory>){
         this.mealsList = mealsList
         notifyDataSetChanged()
     }

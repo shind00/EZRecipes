@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EZRecipes</string>
+    <string name="home_fragment_text">Home Fragment</string>
+    <string name="favorites_fragment_text">Favorites Fragment</string>
+    <string name="category_fragment_text">Category Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+</resources>

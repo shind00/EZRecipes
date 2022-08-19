@@ -6,14 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.shind.ezrecipes.R
 import com.shind.ezrecipes.databinding.ActivityMealBinding
+import com.shind.ezrecipes.db.MealDatabase
 import com.shind.ezrecipes.fragments.HomeFragment
 import com.shind.ezrecipes.pojo.Meal
 import com.shind.ezrecipes.viewmodel.MealViewModel
+import com.shind.ezrecipes.viewmodel.MealViewModelFactory
 
 class MealActivity : AppCompatActivity() {
 
@@ -29,8 +32,9 @@ class MealActivity : AppCompatActivity() {
         binding = ActivityMealBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mealMvvm = ViewModelProvider(this)[MealViewModel::class.java]
-
+        val mealDatabase = MealDatabase.getInstance(this)
+        val viewModelFactory = MealViewModelFactory(mealDatabase)
+        mealMvvm = ViewModelProvider(this, viewModelFactory)[MealViewModel::class.java]
         getMealInformationFromIntent()
 
         setInformationInViews()
@@ -40,6 +44,16 @@ class MealActivity : AppCompatActivity() {
         observeMealDetailsLiveData()
 
         onYoutubeImageClick()
+        onFavoriteClick()
+    }
+
+    private fun onFavoriteClick() {
+        binding.btnAddToFavorites.setOnClickListener {
+            mealToSave?.let{
+                mealMvvm.insertMeal(it)
+                Toast.makeText(this, "Meal saved", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun onYoutubeImageClick() {
@@ -49,16 +63,20 @@ class MealActivity : AppCompatActivity() {
         }
     }
 
+    private var mealToSave: Meal? = null
     private fun observeMealDetailsLiveData() {
         mealMvvm.observeMealDetailsLiveData().observe(this, object: Observer<Meal>{
             override fun onChanged(t: Meal?) {
                 val meal = t
+
+                mealToSave = meal
                 binding.tvCategory.text = "Category : ${meal!!.strCategory}"
                 binding.tvArea.text = "Area: ${meal!!.strArea}"
                 binding.tvInstructionsSteps.text = "${meal!!.strInstructions}"
                 onResponseCase()
 
-                youtubeLink = meal.strYoutube
+                //Check #01
+                youtubeLink = meal.strYoutube.toString()
             }
         })
     }

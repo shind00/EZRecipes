@@ -3,6 +3,7 @@ package com.shind.ezrecipes.retrofit
 import com.shind.ezrecipes.pojo.CategoryList
 import com.shind.ezrecipes.pojo.MealsByCategoryList
 import com.shind.ezrecipes.pojo.MealList
+import com.shind.ezrecipes.pojo.MealsByCategory
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,4 +20,7 @@ interface MealApi {
 
     @GET("categories.php")
     fun getCategories(): Call<CategoryList>
+
+    @GET("filter.php")
+    fun getMealsByCategory(@Query("c") categoryName: String): Call<MealsByCategoryList>
 }

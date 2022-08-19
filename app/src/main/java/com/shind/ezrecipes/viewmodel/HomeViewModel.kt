@@ -37,7 +37,7 @@ class HomeViewModel: ViewModel() {
     }
 
     fun getPopularItems() {
-        RetrofitInstance.api.getPopularItems("Seafood").enqueue(object : Callback<MealsByCategoryList> {
+        RetrofitInstance.api.getPopularItems("Seafood").enqueue(object: Callback<MealsByCategoryList> {
             override fun onResponse(call: Call<MealsByCategoryList>, response: Response<MealsByCategoryList>) {
                 if (response.body() != null) {
                     popularItemsLiveData.value = response.body()!!.meals

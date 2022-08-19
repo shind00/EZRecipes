@@ -25,6 +25,8 @@ Does not support DarkMode
 ![image](https://user-images.githubusercontent.com/43658835/185342245-28cfe4f4-22b9-4506-8090-063a764cc1db.png)
 
 # Libraries + Technologies
+Kotlin + XML
+
 Navigation component - One activity contains multiple fragments
 
 Retrofit - Requesting an HTTP request connection to https://www.themealdb.com/api.php then converting from JSON to Kotlin objects

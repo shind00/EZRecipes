@@ -6,13 +6,7 @@ Youtube; thus the user will need Youtube application on their device.
 # Specifications
 API Level - 32
 
-Targetting mobile android phones. 
-
-Does work on Tablets, but may not be UI elegant.
-
 Restricting to Portrait mode on Android devices (In development... coming soon)
-
-Does not support DarkMode
 
 
 # App Images
